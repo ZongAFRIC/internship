@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xlmns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="contenuCommun/master :: page">
+<head>
+<meta charset="UTF-8" />
+<title> Bienvenue :: Gestion des Utilisateurs</title>
+</head>
+<body>
+<div th:fragment="content">
+<div class="row" style="padding-bottom:50px;">
+
+<div class=col-sm-2 style="border:1px solid #eee;">
+<div class=col-sm->
+<h6 class="text-center" ><a href="/listeClients" class="button blue">Liste Utilisateurs</a></h6>
+</div>
+</div>
+<div class=col-sm-4 style="border:1px solid #eee;">
+<h5 class="text-center">Gestion des Utilisateurs</h5>
+<hr/>
+
+
+<form th:action="@{/create-user}" method="post">
+<div class="form-group">
+<input type="text" class ="form-control" name="nom" placeholder="Nom utilisateur"/>
+</div>
+<div class="form-group">
+<input type="text" class ="form-control" name="prenom" placeholder="Prenom utilisateur"/>
+</div>
+<div class="form-group">
+<input type="email" class ="form-control" name="email" placeholder="email utilisateur"/>
+</div>
+<div class="form-group">
+<input type="text" class ="form-control" name="password" placeholder="mot de passe "/>
+</div>
+<div class="form-group">
+<input type="text" class ="form-control" name="fonction" placeholder="fonction"/>
+</div>
+<div class="form-group">
+<input type="text" class ="form-control" name="photo" placeholder="photo"/>
+</div>
+<div class="form-group">
+<input type="submit" class="btn btn-success" value="ENREGISTRER"/>
+</div>
+</form>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xlmns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="contenuCommun/master :: page">
+<head>
+<meta charset="UTF-8" />
+<title> Bienvenue :: Gestion des Visiteurs</title>
+</head>
+<body>
+<div th:fragment="content">
+<div class="row" style="padding-bottom:50px;">
+
+<div class=col-sm-2 style="border:1px solid #eee;">
+<div class=col-sm->
+<h6 class="text-center" ><a href="/listeClients" class="button blue">Visiteur</a></h6>
+</div>
+</div>
+<div class=col-sm-4 style="border:1px solid #eee;">
+<h5 class="text-center">Gestion des Visiteurs</h5>
+<hr/>
+
+
+<form th:action="@{/create-visiteur}" method="post">
+<div class="form-group">
+<input type="email" class ="form-control" name="adresse" placeholder="Entrez votre adresse mail"/>
+</div>
+<div class="form-group">
+<input type="text" class ="form-control" name="reference" placeholder="Entrez votre reference"/>
+</div>
+<div class="form-group">
+<input type="text" class ="form-control" name="lienOffre" placeholder="Entrez le lien de l'offre"/>
+</div>
+<div class="form-group">
+<input type="submit" class="btn btn-success" value="ENREGISTRER"/>
+</div>
+</form>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>

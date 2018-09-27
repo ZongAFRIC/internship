@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xlmns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="contenuCommun/master :: page">
+<head>
+<meta charset="UTF-8" />
+<title> Bienvenue :: Gestion des offres de stage</title>
+</head>
+<body>
+<div th:fragment="content">
+<div class="row" style="padding-bottom:50px;">
+<div th:action="@{/traitement-offre}" method="post">
+
+<div class="col-sm-8" >
+<table class="table" style="border:1px solid #eee;">
+<thead style="background-color:#444;color:#EEE;">
+<th>Debut</th>
+<th>Duree</th>
+<th>Lieu</th>
+<th>Service</th>
+<th>Categorie</th>
+<th>Lien du stage</th>
+
+</thead>
+<tbody>
+<tr th:each="offr : ${offres}">
+ <td th:text="${offr.debut}"></td>
+ <td th:text="${offr.duree}"></td>
+ <td th:text="${offr.lieu}"></td>
+ <td th:text="${offr.service}"></td>
+ <td th:text="${offr.categorie}"></td>
+ <td th:text="${offr.visiteur.lienOffre}"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
