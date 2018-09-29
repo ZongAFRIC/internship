@@ -1,6 +1,0 @@
-applications:
-- name: Internship
-path: target/Logement-0.0.1-SNAPSHOT.jar
-domain: cfapps.io
-memory: 950M
-instances:  2
