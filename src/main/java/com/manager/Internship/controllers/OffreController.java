@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.manager.Internship.entities.Offre;
@@ -27,7 +28,7 @@ public class OffreController {
 	@Autowired
 	VisiteurRepository vRepository;
 	
-	@RequestMapping("/traitement-offre")
+	@GetMapping("/traitement-offre")
 	public String listeOffres(Model m) {
 		m.addAttribute("Offres", oRepository.findAll());
 		m.addAttribute("Offres", oRepository.findAll());
@@ -36,14 +37,14 @@ public class OffreController {
 	}
 	
 	
-	@RequestMapping("/listerOffre")
+	@GetMapping("/listerOffre")
 	public String listesOffres(Model m) {
 		m.addAttribute("Offres", oRepository.findAll());
 		m.addAttribute("Visiteurs", vRepository.findAll());
 		return "pageOffre/aficheOffre";
 	}
 	
-	@RequestMapping("/create-offre")
+	@GetMapping("/create-offre")
 	public String createOffre(Model m, String debut, Long duree, String lieu, String service, String categorie, Long uses, Long visit) throws ParseException {
     
 	User user = uRepository.getOne(uses);
@@ -56,7 +57,7 @@ public class OffreController {
 	return "/pageOffre/create";
 	}
 	
-	@RequestMapping("/recherche-offre")
+	@GetMapping("/recherche-offre")
 	public String rechercheOffre(@Param("email") String email) {
 		
 		return null;
